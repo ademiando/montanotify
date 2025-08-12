@@ -1,0 +1,19 @@
+deploy checklist:
+
+1) Create GitHub repo 'montanotify'.
+2) Create files via GitHub web UI in this order:
+   - package.json, next.config.js, tailwind.config.js, postcss.config.js, .gitignore, .env.example, README.md, LICENSE
+   - db/schema.sql
+   - .github/workflows/scheduler.yml
+   - styles/globals.css
+   - pages/_app.js, pages/index.js, pages/dashboard.js
+   - pages/api/* (health, preview, subscribe, unsubscribe, tasks, fetchNow, sendScheduled)
+   - components/* (ModelSelector, TopicSelector, TaskForm, TaskList)
+   - lib/* (supabase, newsFetcher, aiClient, aiSummarizer, email, whatsapp)
+   - notes/DEPLOY_CHECKLIST.txt
+
+3) Create Supabase project; run db/schema.sql in SQL editor.
+4) Add environment variables to Vercel as listed in .env.example.
+5) Import repository on Vercel and deploy.
+6) Create Vercel Cron: POST /api/sendScheduled, header x-scheduler-secret: ACTION_SECRET, body {}.
+7) Test: preview via UI, create a task, run manual curl to /api/sendScheduled, check logs & DB.
