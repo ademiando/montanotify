@@ -8,7 +8,7 @@
     "start": "next start -p 3000"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.11.0",
+    "@sendgrid/mail": "^8.1.5",
     "@supabase/supabase-js": "^2.29.0",
     "axios": "^1.5.0",
     "cron-parser": "^4.6.0",
