@@ -1,0 +1,17 @@
+name: Scheduled Sender (fallback)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' # every 15 minutes fallback
+  workflow_dispatch:
+
+jobs:
+  post-scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CURL sendScheduled
+        run: |
+          curl -X POST "${{ secrets.SITE_URL }}/api/sendScheduled" \
+            -H "Content-Type: application/json" \
+            -H "x-scheduler-secret: ${{ secrets.ACTION_SECRET }}" \
+            -d '{}'
