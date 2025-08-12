@@ -1,0 +1,25 @@
+{
+  "name": "montanotify",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.12.0",
+    "@supabase/supabase-js": "^2.29.0",
+    "axios": "^1.5.0",
+    "cron-parser": "^4.6.0",
+    "next": "13.5.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "^4.2.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.30",
+    "autoprefixer": "^10.4.14"
+  }
+}
